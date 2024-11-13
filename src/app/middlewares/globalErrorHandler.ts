@@ -9,9 +9,9 @@ export const globalErrorHandler = (
 ) => {
   // console.log(req);
 
-  res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+  res.status(httpStatus.NOT_FOUND).json({
     success: false,
-    status: httpStatus.INTERNAL_SERVER_ERROR,
+    status: httpStatus.NOT_FOUND,
     message: error?.message || "Something went wrong.",
     // error: error,
   });

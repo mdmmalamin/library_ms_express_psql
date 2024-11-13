@@ -10,14 +10,14 @@ const createBookIntoDB = async (payload: TBook): Promise<Book> => {
   return result;
 };
 
-const getAllBooksFromDB = async () => {
+const getAllBooksFromDB = async (): Promise<Book[] | null> => {
   const result = await prisma.book.findMany();
 
   return result;
 };
 
 const getBookByIdFromDB = async (bookId: string): Promise<Book | null> => {
-  const result = await prisma.book.findUnique({
+  const result = await prisma.book.findUniqueOrThrow({
     where: {
       bookId,
     },
@@ -46,8 +46,18 @@ const updateBookByIdIntoDB = async (
   return result;
 };
 
-const deleteBookByIdFromDB = async (bookId: string) => {
-  console.log(bookId);
+const deleteBookByIdFromDB = async (bookId: string): Promise<undefined> => {
+  await prisma.book.findUniqueOrThrow({
+    where: {
+      bookId,
+    },
+  });
+
+  await prisma.book.delete({
+    where: {
+      bookId,
+    },
+  });
 };
 
 export const BookService = {
