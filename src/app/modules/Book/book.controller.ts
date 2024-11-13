@@ -38,7 +38,7 @@ const getBookById = catchAsync(async (req: Request, res: Response) => {
 
 const updateBookById = catchAsync(async (req: Request, res: Response) => {
   const { bookId } = req.params;
-  const result = await BookService.updateBookByIdIntoDB(bookId);
+  const result = await BookService.updateBookByIdIntoDB(bookId, req.body);
 
   apiResponse(res, {
     success: true,

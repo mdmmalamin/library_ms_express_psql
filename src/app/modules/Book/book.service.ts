@@ -30,8 +30,20 @@ const updateBookByIdIntoDB = async (
   bookId: string,
   payload: Partial<Book>
 ): Promise<Book> => {
-  console.log([bookId, payload]);
-  return payload;
+  await prisma.book.findUniqueOrThrow({
+    where: {
+      bookId,
+    },
+  });
+
+  const result = await prisma.book.update({
+    where: {
+      bookId,
+    },
+    data: payload,
+  });
+
+  return result;
 };
 
 const deleteBookByIdFromDB = async (bookId: string) => {
