@@ -4,7 +4,7 @@ type TResponse<T> = {
   success: boolean;
   statusCode: number;
   message: string;
-  data: T | null | undefined;
+  data?: T | null | undefined;
 };
 
 export const apiResponse = <T>(res: Response, data: TResponse<T>) => {
