@@ -1,7 +1,12 @@
+import { prisma } from "../../../shared";
 import { TBook } from "./book.interface";
 
 const createBookIntoDB = (payload: TBook) => {
-  console.log(payload);
+  const result = prisma.book.create({
+    data: payload,
+  });
+
+  return result;
 };
 
 const getAllBooksFromDB = () => {
