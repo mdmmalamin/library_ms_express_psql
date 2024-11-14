@@ -96,7 +96,7 @@ const getOverDueBorrowFromDB = async () => {
   return overdueBorrows;
 };
 
-const getAllBorrowBooksFromDB = async (): Promise<BorrowRecord[] | null> => {
+const getAllBorrowBooksFromDB = async (): Promise<BorrowRecord[]> => {
   const result = await prisma.borrowRecord.findMany({
     include: {
       book: true,

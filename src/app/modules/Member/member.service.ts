@@ -20,7 +20,7 @@ const createMemberIntoDB = async (payload: TMember): Promise<Member> => {
   return result;
 };
 
-const getAllMembersFromDB = async (): Promise<Member[] | null> => {
+const getAllMembersFromDB = async (): Promise<Member[]> => {
   const result = await prisma.member.findMany();
 
   return result;

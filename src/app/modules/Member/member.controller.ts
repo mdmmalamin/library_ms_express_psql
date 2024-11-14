@@ -19,7 +19,8 @@ const getAllMembers = catchAsync(async (req: Request, res: Response) => {
   apiResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "Members retrieved successfully",
+    message:
+      result.length > 0 ? "Members retrieved successfully" : "No member found.",
     data: result,
   });
 });

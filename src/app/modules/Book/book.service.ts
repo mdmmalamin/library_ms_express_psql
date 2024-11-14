@@ -10,7 +10,7 @@ const createBookIntoDB = async (payload: TBook): Promise<Book> => {
   return result;
 };
 
-const getAllBooksFromDB = async (): Promise<Book[] | null> => {
+const getAllBooksFromDB = async (): Promise<Book[]> => {
   const result = await prisma.book.findMany();
 
   return result;

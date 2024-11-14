@@ -30,7 +30,8 @@ const getOverDueBorrow = catchAsync(async (req: Request, res: Response) => {
   apiResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "Overdue borrow list fetched",
+    message:
+      result.length > 0 ? "Overdue borrow list fetched" : "No overdue books",
     data: result,
   });
 });
@@ -41,7 +42,10 @@ const getAllBorrowBooks = catchAsync(async (req: Request, res: Response) => {
   apiResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "All book borrowed retrieved successfully",
+    message:
+      result.length > 0
+        ? "All book borrowed retrieved successfully"
+        : "No book borrowed",
     data: result,
   });
 });

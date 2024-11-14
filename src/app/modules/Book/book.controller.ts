@@ -19,7 +19,8 @@ const getAllBooks = catchAsync(async (req: Request, res: Response) => {
   apiResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "Books retrieved successfully",
+    message:
+      result.length > 0 ? "Books retrieved successfully" : "No book available.",
     data: result,
   });
 });
