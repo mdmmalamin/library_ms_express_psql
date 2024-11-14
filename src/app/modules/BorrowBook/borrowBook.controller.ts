@@ -13,17 +13,6 @@ const createBorrowBook = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const getAllBorrowBooks = catchAsync(async (req: Request, res: Response) => {
-  const result = await BorrowBookService.getAllBorrowBooksFromDB();
-
-  apiResponse(res, {
-    success: true,
-    statusCode: httpStatus.OK,
-    message: "All book borrowed retrieved successfully",
-    data: result,
-  });
-});
-
 const returnBorrowBook = catchAsync(async (req: Request, res: Response) => {
   const result = await BorrowBookService.returnBorrowBookIntoDB(req.body);
 
@@ -35,8 +24,32 @@ const returnBorrowBook = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getOverDueBorrow = catchAsync(async (req: Request, res: Response) => {
+  const result = await BorrowBookService.getOverDueBorrowFromDB();
+
+  apiResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Overdue borrow list fetched",
+    data: result,
+  });
+});
+
+const getAllBorrowBooks = catchAsync(async (req: Request, res: Response) => {
+  const result = await BorrowBookService.getAllBorrowBooksFromDB();
+
+  apiResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "All book borrowed retrieved successfully",
+    data: result,
+  });
+});
+
 export const BorrowBookController = {
   createBorrowBook,
-  getAllBorrowBooks,
   returnBorrowBook,
+  getOverDueBorrow,
+
+  getAllBorrowBooks,
 };

@@ -7,6 +7,8 @@ router.post("/borrow", BorrowBookController.createBorrowBook);
 
 router.post("/return", BorrowBookController.returnBorrowBook);
 
+router.get("/borrow/overdue", BorrowBookController.getOverDueBorrow);
+
 router.get("/borrow", BorrowBookController.getAllBorrowBooks);
 
 export const BorrowBookRoutes = router;
