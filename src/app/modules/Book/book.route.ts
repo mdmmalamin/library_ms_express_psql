@@ -1,9 +1,15 @@
 import express from "express";
 import { BookController } from "./book.controller";
+// import { validateRequest } from "../../middlewares";
+// import { BookValidation } from "./book.validation";
 
 const router = express.Router();
 
-router.post("/", BookController.createBook);
+router.post(
+  "/",
+  // validateRequest(BookValidation.createSchema),
+  BookController.createBook
+);
 
 router.get("/", BookController.getAllBooks);
 
