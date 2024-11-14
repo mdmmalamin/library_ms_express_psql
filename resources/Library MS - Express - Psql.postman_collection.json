@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "8f2a004c-7807-43ff-9be8-2efa5ca41dd6",
+		"name": "Library MS | Express | Psql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24148431"
+	},
+	"item": [
+		{
+			"name": "Local Host 3000",
+			"item": [
+				{
+					"name": "Borrow Book",
+					"item": [
+						{
+							"name": "Borrow A Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\": \"cb4b2c3b-2d8e-46ef-b0f7-d9f91405130a\",\r\n    \"memberId\": \"62170e26-4ea9-47a7-bdaa-a458b1025041\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/borrow",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"borrow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Return A Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"borrowId\": \"aa6949e2-7e4f-4676-831d-2d28c22250be\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/return",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"return"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Overdue Borrow List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/borrow/overdue",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"borrow",
+										"overdue"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Borrowed Book",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/borrow",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"borrow"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Member",
+					"item": [
+						{
+							"name": "Create Member",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Alice Johnson Junior\",\r\n    \"email\": \"alic.Juniore.3@gmail.com\",\r\n    \"phone\": \"123-456-7899\"\r\n    // \"membershipDate\": \"2024-01-01T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/members",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Members",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/members",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/members/1a1d7f50-ba7a-4853-ba75-dfb0fffd5f97",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"members",
+										"1a1d7f50-ba7a-4853-ba75-dfb0fffd5f97"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Member",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Alice Johnson Junior\",\r\n    \"email\": \"alice@gmail.com\",\r\n    \"phone\": \"098-765-4344\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/members/9b53cea4-1b8a-41ce-b013-cb86c007b3c8",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"members",
+										"9b53cea4-1b8a-41ce-b013-cb86c007b3c8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Member",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/members/9b53cea4-1b8a-41ce-b013-cb86c007b3c8",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"members",
+										"9b53cea4-1b8a-41ce-b013-cb86c007b3c8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Book",
+					"item": [
+						{
+							"name": "Create Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"To Kill a Mockingbird Part 4\",\r\n    \"genre\": \"Fiction\",\r\n    \"publishedYear\": 1980,\r\n    \"totalCopies\": 11,\r\n    \"availableCopies\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/books",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Books",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/books",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/books/9f1e7b03-64a1-49d1-8ee6-8aed1df92c87",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"books",
+										"9f1e7b03-64a1-49d1-8ee6-8aed1df92c87"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Book",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"To Kill a Mockingbird - Revised\",\r\n    \"genre\": \"Classic Fiction\",\r\n    \"publishedYear\": 1961,\r\n    \"totalCopies\": 12,\r\n    \"availableCopies\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/books/c7e03143-8dfd-4ae8-b183-2a10a6eff1c2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"books",
+										"c7e03143-8dfd-4ae8-b183-2a10a6eff1c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Book",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/books/9f1e7b03-64a1-49d1-8ee6-8aed1df92c87",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"books",
+										"9f1e7b03-64a1-49d1-8ee6-8aed1df92c87"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "API NOT FOUND",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/dkfjakl;",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"dkfjakl;"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Link",
+			"item": [
+				{
+					"name": "Book",
+					"item": [
+						{
+							"name": "Create Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"To Kill a Mockingbird Part 4\",\r\n    \"genre\": \"Fiction\",\r\n    \"publishedYear\": 1980,\r\n    \"totalCopies\": 11,\r\n    \"availableCopies\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/books",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Books",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/books",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/books/9f1e7b03-64a1-49d1-8ee6-8aed1df92c87",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"books",
+										"9f1e7b03-64a1-49d1-8ee6-8aed1df92c87"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Book",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"To Kill a Mockingbird - Revised\",\r\n    \"genre\": \"Classic Fiction\",\r\n    \"publishedYear\": 1961,\r\n    \"totalCopies\": 12,\r\n    \"availableCopies\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/books/c7e03143-8dfd-4ae8-b183-2a10a6eff1c2",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"books",
+										"c7e03143-8dfd-4ae8-b183-2a10a6eff1c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Book",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/books/9f1e7b03-64a1-49d1-8ee6-8aed1df92c87",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"books",
+										"9f1e7b03-64a1-49d1-8ee6-8aed1df92c87"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Member",
+					"item": [
+						{
+							"name": "Create Member",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Alice Johnson Junior\",\r\n    \"email\": \"alic.Juniore.3@gmail.com\",\r\n    \"phone\": \"123-456-7899\"\r\n    // \"membershipDate\": \"2024-01-01T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/members",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Members",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/members",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/members/1a1d7f50-ba7a-4853-ba75-dfb0fffd5f97",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"members",
+										"1a1d7f50-ba7a-4853-ba75-dfb0fffd5f97"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Member",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Alice Johnson Junior\",\r\n    \"email\": \"alice@gmail.com\",\r\n    \"phone\": \"098-765-4344\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/members/9b53cea4-1b8a-41ce-b013-cb86c007b3c8",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"members",
+										"9b53cea4-1b8a-41ce-b013-cb86c007b3c8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Member",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/members/9b53cea4-1b8a-41ce-b013-cb86c007b3c8",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"members",
+										"9b53cea4-1b8a-41ce-b013-cb86c007b3c8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Borrow Book",
+					"item": [
+						{
+							"name": "Borrow A Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\": \"cb4b2c3b-2d8e-46ef-b0f7-d9f91405130a\",\r\n    \"memberId\": \"62170e26-4ea9-47a7-bdaa-a458b1025041\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/borrow",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"borrow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Return A Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"borrowId\": \"aa6949e2-7e4f-4676-831d-2d28c22250be\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/return",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"return"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Overdue Borrow List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/borrow/overdue",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"borrow",
+										"overdue"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Borrowed Book",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{library}}/borrow",
+									"host": [
+										"{{library}}"
+									],
+									"path": [
+										"borrow"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "API NOT FOUND",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/adminnnnnnn/soadfft/6afd75b3aa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"adminnnnnnn",
+								"soadfft",
+								"6afd75b3aa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "library",
+			"value": "http://localhost:3000/api"
+		},
+		{
+			"key": "local",
+			"value": "http://localhost:3000/api"
+		}
+	]
+}

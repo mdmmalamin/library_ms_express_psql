@@ -1,3 +1,3 @@
-// export const dateCalculate = (date: string) => {
-//   const 
-// };
+export const dateCalculate = (date: string) => {
+  console.log(date);
+};
